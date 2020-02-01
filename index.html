@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gns Profile Generator</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <main>
+        <header>
+            <h1>Profile Generator</h1>
+        </header>
+
+        <div id="sections-container">
+            <section id="section-intro" data-section-active>
+                <h2>
+                    Profile Generator
+                    <span class="text-sub">for GNS 104</span>
+                </h2>
+                <input type="text" id="input-matric-number" placeholder="Matric Number" data-value-input>
+            </section>
+
+            <section id="section-personal-info">
+                <h2>Personal Details</h2>
+                <input type="text" id="input-first-name" placeholder="firstname" data-value-input>
+                <input type="text" id="input-last-name" placeholder="lastname" data-value-input>
+                <input type="text" id="input-place-of-birth" placeholder="Place Of Birth" data-value-input>
+                <input type="text" id="input-state-of-origin" placeholder="State Of Origin" data-value-input>
+                <select id="input-sex" data-value-input>
+                    <option value="Male">Male</option>
+                    <option value="Feamle">Female</option>
+                </select>
+
+                <textarea name="" id="input-personal-philosophy" cols="30" rows="10" placeholder="Personal Philosophy" data-value-input></textarea>
+
+            </section>
+
+            <section id="section-academics">
+                <h2>
+                    Academics
+                    <span class="text-sub">Input up to four institutions (fields are optional)</span>
+                </h2>
+
+                <div class="block-group">
+                    <h3>
+                        Institution One
+                        <hr>
+                    </h3>
+                    <input type="text" id="input-institution-01" placeholder="Institution" data-value-input-group="input-institution" data-value-input-group-index="0">
+                    <input type="text" id="input-qualification-01" placeholder="Qualification" data-value-input-group="input-qualification" data-value-input-group-index="0">
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Institution Two
+                        <hr>
+                    </h3>
+                    <input type="text" id="input-institution-02" placeholder="Institution" data-value-input-group="input-institution" data-value-input-group-index="1">
+                    <input type="text" id="input-qualification-02" placeholder="Qualification"  data-value-input-group="input-qualification" data-value-input-group-index="1">
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Institution Three
+                        <hr>
+                    </h3>
+                    <input type="text" id="input-institution-03" placeholder="Institution" data-value-input-group="input-institution" data-value-input-group-index="2">
+                    <input type="text" id="input-qualification-03" placeholder="Qualification"  data-value-input-group="input-qualification" data-value-input-group-index="2">
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Institution Four
+                        <hr>
+                    </h3>
+                    <input type="text" id="input-institution-04" placeholder="Institution" data-value-input-group="input-institution" data-value-input-group-index="3">
+                    <input type="text" id="input-qualification-04" placeholder="Qualification" data-value-input-group="input-qualification" data-value-input-group-index="3">
+                </div>
+            </section>
+
+            <section id="section-responsibility">
+                <h2>
+                    Current Responsibility
+                    <span class="text-sub">(fields are optional)</span>
+                </h2>
+                <input type="text" id="input-responsibility-01" placeholder="First Responsibility" data-value-input-group="input-responsibility" data-value-input-group-index="0">
+                <input type="text" id="input-responsibility-02" placeholder="Second Responsibility" data-value-input-group="input-responsibility" data-value-input-group-index="1">
+                <input type="text" id="input-responsibility-03" placeholder="Third Responsibility" data-value-input-group="input-responsibility" data-value-input-group-index="2">
+
+            </section>
+
+            <section id="section-timetable">
+                <h2>
+                    Personal Timetable
+                    <span class="text-sub">Select any four subject for each day (fields are optional)</span>
+                </h2>
+
+                <div class="block-group">
+                    <h3>
+                        Monday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-monday-01" data-value-input-group="input-timetable-monday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-monday-02" data-value-input-group="input-timetable-monday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-monday-03" data-value-input-group="input-timetable-monday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-monday-04" data-value-input-group="input-timetable-monday" data-value-input-group-index="3"></select>
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Tuesday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-tuesday-01" data-value-input-group="input-timetable-tuesday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-tuesday-02" data-value-input-group="input-timetable-tuesday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-tuesday-03" data-value-input-group="input-timetable-tuesday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-tuesday-04" data-value-input-group="input-timetable-tuesday" data-value-input-group-index="3"></select>
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Wednesday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-wednesday-01" data-value-input-group="input-timetable-wednesday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-wednesday-02" data-value-input-group="input-timetable-wednesday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-wednesday-03" data-value-input-group="input-timetable-wednesday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-wednesday-04" data-value-input-group="input-timetable-wednesday" data-value-input-group-index="3"></select>
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Thursday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-thursday-01" data-value-input-group="input-timetable-thursday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-thursday-02" data-value-input-group="input-timetable-thursday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-thursday-03" data-value-input-group="input-timetable-thursday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-thursday-04" data-value-input-group="input-timetable-thursday" data-value-input-group-index="3"></select>
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Friday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-friday-01" data-value-input-group="input-timetable-friday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-friday-02" data-value-input-group="input-timetable-friday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-friday-03" data-value-input-group="input-timetable-friday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-friday-04" data-value-input-group="input-timetable-friday" data-value-input-group-index="3"></select>
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Saturday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-saturday-01" data-value-input-group="input-timetable-saturday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-saturday-02" data-value-input-group="input-timetable-saturday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-saturday-03" data-value-input-group="input-timetable-saturday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-saturday-04" data-value-input-group="input-timetable-saturday" data-value-input-group-index="3"></select>
+                </div>
+
+                <div class="block-group">
+                    <h3>
+                        Sunday
+                        <hr>
+                    </h3>
+                    <select class="subject-select" id="input-timetable-sunday-01" data-value-input-group="input-timetable-sunday" data-value-input-group-index="0"></select>
+                    <select class="subject-select" id="input-timetable-sunday-02" data-value-input-group="input-timetable-sunday" data-value-input-group-index="1"></select>
+                    <select class="subject-select" id="input-timetable-sunday-03" data-value-input-group="input-timetable-sunday" data-value-input-group-index="2"></select>
+                    <select class="subject-select" id="input-timetable-sunday-04" data-value-input-group="input-timetable-sunday" data-value-input-group-index="3"></select>
+                </div>
+            </section>
+
+
+
+            <section id="section-final">
+                <h2>
+                    Profile Created
+                    <span class="text-sub">Click on the download button below (Profile photo is optional)</span>
+                </h2>
+
+                <div id="profile-picture-container">
+                    No Photo
+                    <div class="image-border">
+                    </div>
+                </div>
+
+                <input type="file" name="" id="input-file-profile-image" accept="image/*">
+                <input type="submit" value="Download Profile PDF" id="input-submit-download">
+            </section>
+        </div>
+
+        <div id="nav-buttons-container">
+            <button id="btn-nav-prev">&lt;</button>
+            <button id="btn-nav-next">&gt;</button>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>

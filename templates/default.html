@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>GNS Profile Generator</title>
+    <link rel="stylesheet" href="../css/document.css">
+    <style>
+        h1 {
+            font-size: 18.2pt;
+        }
+
+        h2 {
+            font-size: 16.1pt;
+        }
+
+        h1, h2 {
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 1pt 0;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .image-border {
+            border: 1px solid black;
+            padding: 5pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .image-border img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #section-personal-detatils {
+            display: flex;
+        }
+
+        #personal-details {
+            padding-top: 10pt;
+            flex: 1;
+        }
+
+        #personal-details table {
+            width: 100%;
+            table-layout: auto;
+        }
+
+        #personal-details table tbody tr td {
+            padding-top: 3pt;
+        }
+
+        #personal-details table tbody tr td:first-of-type {
+            font-weight: bold;
+            text-decoration: underline;
+            width: 110pt;
+            vertical-align: top;
+        }
+
+        /* #personal-details-title {
+            font-weight: bold;
+            text-decoration: underline;
+        } */
+
+        /* #personal-details-values {
+            flex: 1;
+            padding-left: 10pt;
+        } */
+
+        #profile-picture-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 1.14in;
+            height: 1.14in;
+        }
+
+        #profile-picture-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #section-academics {
+            display: flex;
+        }
+
+        #section-academics, #section-responsibility, #section-timetable, #section-others {
+            margin-top: 20pt;
+        }
+
+        #section-academics ul, #section-responsibility ul {
+            list-style: decimal;
+            padding-left: 30pt;
+        }
+
+        #section-academics div {
+            flex: 1;
+        }
+
+        #section-timetable table {
+            margin-top: 10pt;
+            width: 100%;
+            empty-cells: show;
+            border: 1px solid black;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        #section-timetable table tbody tr {
+            border-top: 1px solid black;
+        }
+        
+        #section-timetable table td, #section-timetable table th {
+            border: 1px solid black;
+            padding: 5pt;
+        }
+
+        #section-timetable table th {
+            text-align: left;
+        }
+
+        #section-responsibility, #section-school-attended, #section-qualification {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1 class="text-center">My Profile</h1>
+        <div id="section-personal-detatils">
+            <div id="personal-details">
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Name:</td>
+                            <td><span id="value-first-name"></span> <span id="value-last-name"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Place of birth:</td>
+                            <td><span id="value-place-of-birth"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>State of origin:</td>
+                            <td><span id="value-state-of-origin"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Sex:</td>
+                            <td><span id="value-sex"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Matric Number:</td>
+                            <td><span id="value-matric-number"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="profile-picture-container">
+                No Photo
+                <div class="image-border">
+                    <img id="value-profile-picture-data">
+                </div>
+            </div>
+        </div>
+
+        <div id="section-academics">
+            <div id="section-school-attended">
+                <h2>School Attended</h2>
+                <ul id="value-institution" data-value-hide-empty-container="section-school-attended">
+                </ul>
+            </div>
+            <div id="section-qualification">
+                <h2>Qualifications</h2>
+                <ul id="value-qualification" data-value-hide-empty-container="section-qualification">
+                </ul>
+            </div>
+        </div>
+
+        <div id="section-responsibility">
+            <h2>Current Responsiblilty</h2>
+            <ul id="value-responsibility" data-value-hide-empty-container="section-responsibility">
+            </ul>
+        </div>
+
+        <div id="section-timetable">
+            <h2>Personal Timetable</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th  colspan="5">
+                            Days
+                        </th>
+                        <!-- <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th> -->
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="value-timetable-monday">
+                        <td>
+                            Monday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr id="value-timetable-tuesday">
+                        <td>
+                            Tuesday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr id="value-timetable-wednesday">
+                        <td>
+                            Wednesday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr id="value-timetable-thursday">
+                        <td>
+                            Thursday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr id="value-timetable-friday">
+                        <td>
+                            Friday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr id="value-timetable-saturday">
+                        <td>
+                            Saturday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr id="value-timetable-sunday">
+                        <td>
+                            Sunday
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="section-others">
+            <h2>Personal Philosophy</h2>
+            <span id="value-personal-philosophy"></span>
+        </div>
+    </main>
+
+    <script src="../js/html2canvas.min.js"></script>
+    <!-- <script src="../js/jspdf.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="../js/document_window.js"></script>
+</body>
+</html>

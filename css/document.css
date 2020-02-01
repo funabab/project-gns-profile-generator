@@ -1,0 +1,52 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: rgb(39, 39, 39);
+}
+
+main {
+    padding: 0.30in;
+    border: 1px solid black;
+    width: calc(210mm - 0.3in);
+    height: calc(297mm - 0.3in);
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+    background: white;
+    margin: 0 auto;
+}
+
+body[data-download-started] {
+    width: 100vw;
+    height: 100vh;
+}
+
+body[data-download-started] main {
+    display: none;
+}
+
+div[data-downloading-status-container] {
+    display: block !important;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+}
+
+@media all and (min-width: 750px) {
+    body[data-download-started] main {
+        display: block;
+    }
+
+    div[data-downloading-status-container] {
+        display: none !important;
+    }
+
+}
+
