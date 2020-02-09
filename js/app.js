@@ -11,18 +11,6 @@ const COURSE_CODES = [
 
 ]
 
-window.dataURLToBlob = value => {
-    const data = value.slice(5).split(";");
-    const mineType = data[0];
-    const rawText = atob(data[1].split(",")[1]);
-    const raw = new Uint8Array(rawText.length);
-
-    for (i = 0; i < rawText.length; i++) {
-        raw[i] = rawText.charCodeAt(i);
-    }
-    return new Blob([raw], {type: mineType});
-}
-
 class App {
     constructor() {
         this.dataValues = {};
@@ -114,34 +102,31 @@ class App {
 
     updateProfileImage(imageFile) {
         const imageSize = 110;
-        const fileReader = new FileReader();
-        fileReader.onload = event => {
-            let elImg = this.elProfileImageContainer.querySelector("img");
-            if (elImg == null) {
-                elImg = document.createElement("img");
-            }
-
-            let canvas = this.elProfileImageContainer.querySelector("canvas");
-            if (canvas == null) {
-                canvas = document.createElement("canvas");
-                canvas.width = imageSize;
-                canvas.height = imageSize;
-                this.elProfileImageContainer.appendChild(canvas);
-            }
-
-            const context = canvas.getContext("2d");
-            createImageBitmap(dataURLToBlob(event.target.result), {
-                resizeWidth: imageSize,
-                resizeHeight: imageSize
-            }).then(result => {
-                context.drawImage(result, 0, 0, 110, 110);
-                const canvasData = canvas.toDataURL("image/jpeg", 0.5);
-                this.dataValues["input-profile-picture-data"] = canvasData;
-                elImg.src = canvasData;
-            });
+        let elImg = this.elProfileImageContainer.querySelector("img");
+        if (elImg == null) {
+            elImg = document.createElement("img");
             this.elProfileImageContainer.appendChild(elImg);
         }
-        fileReader.readAsDataURL(imageFile);
+
+        let canvas = this.elProfileImageContainer.querySelector("canvas");
+        if (canvas == null) {
+            canvas = document.createElement("canvas");
+            canvas.width = imageSize;
+            canvas.height = imageSize;
+            this.elProfileImageContainer.appendChild(canvas);
+        }
+
+        const context = canvas.getContext("2d");
+        context.clearRect(0, 0, imageSize, imageSize);
+        createImageBitmap(imageFile, {
+            resizeWidth: imageSize,
+            resizeHeight: imageSize
+        }).then(result => {
+            context.drawImage(result, 0, 0, 110, 110);
+            const canvasData = canvas.toDataURL("image/jpeg", 0.5);
+            this.dataValues["input-profile-picture-data"] = canvasData;
+            elImg.src = canvasData;
+        });
     }
 
     openDocumentWindow() {
